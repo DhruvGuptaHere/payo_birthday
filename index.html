@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Birthday</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="heart-intro">
+    <svg id="heart-svg" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path id="heart" d="M100 150 C70 130, 30 100, 40 64 C50 36, 84 36, 100 56 C116 36, 150 36, 160 64 C170 100, 130 130, 100 150 Z" />
+    </svg>
+  </div>
+  <main id="main-card" aria-live="polite">
+    <div class="header">
+      <div class="emoji">🎊</div>
+      <h1 id="rotating-text" class="fade">HAPPY BIRTHDAY ✨</h1>
+      <div class="emoji">✨</div>
+    </div>
+    <div class="avatar-wrap">
+      <img src="images/payoo.jpeg" alt="Madam Ji" />
+    </div>
+    <h2 class="name">Madam Ji</h2>
+    <div id="scroll-hint" aria-hidden="true">
+      <div class="chevrons">⌄</div>
+    </div>
+  </main>
+  <div id="npc" aria-hidden="true">
+    <img class="npc-avatar" src="images/npc.png" alt="guide avatar" />
+    <div class="npc-bubble" id="npc-bubble" role="status" aria-live="polite">Hello!</div>
+  </div>
+  <div id="scroll-menu" aria-hidden="true">
+    <button id="scroll-menu-close" class="scroll-menu-close" aria-label="Close menu">✕</button>
+    <div class="scroll-menu-content">
+      <h4>Welcome to the journey</h4>
+      <p>You're about to see something special — click the letters in "Surprise" to explore.</p>
+      <div class="menu-actions">
+        <button id="menu-continue" class="menu-btn">Continue to surprise</button>
+      </div>
+    </div>
+  </div>
+  <section id="surprise" aria-label="Surprise section">
+    <h3 class="surprise-heading">Surprise</h3>
+    <p class="surprise-instruction">Click any letter to reveal a message</p>
+    <div id="letters" class="letters" role="list">
+      <button class="letter" data-key="S">S</button>
+      <button class="letter" data-key="U">U</button>
+      <button class="letter" data-key="R">R</button>
+      <button class="letter" data-key="P">P</button>
+      <button class="letter" data-key="R2">R</button>
+      <button class="letter" data-key="I">I</button>
+      <button class="letter" data-key="S2">S</button>
+      <button class="letter" data-key="E">E</button>
+    </div>
+  <div style="height: 600px; width: 100%;"></div>
+    <div id="audio-wrapper" class="audio-wrapper" aria-hidden="true">
+      <div class="audio-inner">
+        <img src="images/spotify.png" alt="Surprise avatar" class="audio-img" />
+        <div class="audio-content">
+          <div class="audio-info">
+            <strong>Surprise audio</strong>
+            <span id="audio-status" class="audio-status">No audio loaded</span>
+          </div>
+          <div class="audio-controls">
+            <button id="audio-play" class="audio-btn" aria-label="Play">▶</button>
+            <input id="audio-progress" type="range" min="0" max="100" value="0" class="audio-progress" />
+            <span id="audio-time" class="audio-time">0:00</span>
+            <input id="audio-volume" type="range" min="0" max="1" step="0.01" value="0.9" class="audio-volume" aria-label="Volume" />
+          </div>
+        </div>
+      </div>
+      <audio id="surprise-audio-file" preload="metadata"></audio>
+    </div>
+  </section>
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="document">
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+  <img id="modal-img" src="images/payoo.jpeg" alt="" />
+      <p id="modal-text" class="modal-text"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
