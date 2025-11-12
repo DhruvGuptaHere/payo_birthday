@@ -22,14 +22,22 @@
       <img src="images/payoo.jpeg" alt="Madam Ji" />
     </div>
     <h2 class="name">Madam Ji</h2>
-    <div id="scroll-hint" aria-hidden="true">
-      <div class="chevrons">⌄</div>
-    </div>
+    <section id="surprise" aria-label="Surprise section">
+      <h3 class="surprise-heading">Surprise</h3>
+      <p class="surprise-instruction">Click any letter to reveal a message</p>
+      <div id="letters" class="letters" role="list">
+        <button class="letter" data-key="S">S</button>
+        <button class="letter" data-key="U">U</button>
+        <button class="letter" data-key="R">R</button>
+        <button class="letter" data-key="P">P</button>
+        <button class="letter" data-key="R2">R</button>
+        <button class="letter" data-key="I">I</button>
+        <button class="letter" data-key="S2">S</button>
+        <button class="letter" data-key="E">E</button>
+      </div>
+      <div style="height: 100px; width: 100%;"></div>
+    </section>
   </main>
-  <div id="npc" aria-hidden="true">
-    <img class="npc-avatar" src="images/npc.png" alt="guide avatar" />
-    <div class="npc-bubble" id="npc-bubble" role="status" aria-live="polite">Hello!</div>
-  </div>
   <div id="scroll-menu" aria-hidden="true">
     <button id="scroll-menu-close" class="scroll-menu-close" aria-label="Close menu">✕</button>
     <div class="scroll-menu-content">
@@ -40,21 +48,6 @@
       </div>
     </div>
   </div>
-  <section id="surprise" aria-label="Surprise section">
-    <h3 class="surprise-heading">Surprise</h3>
-    <p class="surprise-instruction">Click any letter to reveal a message</p>
-    <div id="letters" class="letters" role="list">
-      <button class="letter" data-key="S">S</button>
-      <button class="letter" data-key="U">U</button>
-      <button class="letter" data-key="R">R</button>
-      <button class="letter" data-key="P">P</button>
-      <button class="letter" data-key="R2">R</button>
-      <button class="letter" data-key="I">I</button>
-      <button class="letter" data-key="S2">S</button>
-      <button class="letter" data-key="E">E</button>
-    </div>
-  <div style="height: 100px; width: 100%;"></div>
-  </section>
   <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-backdrop"></div>
     <div class="modal-content" role="document">
