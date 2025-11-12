@@ -34,9 +34,9 @@ window.addEventListener("load", () => {
       main.style.transform = "translateY(0)";
     });
     startCycling();
+    highlightCurrent(); // Make S glow immediately
     setTimeout(() => {
       showNPC("Click on S in Surprise to begin the journey!");
-      highlightCurrent();
     }, 700);
   }, 1700);
 });
@@ -114,34 +114,10 @@ document.querySelectorAll('.letter').forEach(btn => {
     }
   });
 });
-const scrollMenu = document.getElementById('scroll-menu');
-const menuClose = document.getElementById('scroll-menu-close');
-const menuContinue = document.getElementById('menu-continue');
-function openScrollMenu(){
-  if(!scrollMenu) return;
-  scrollMenu.setAttribute('aria-hidden','false');
-  scrollMenu.classList.add('open');
-}
-function closeScrollMenu(){
-  if(!scrollMenu) return;
-  scrollMenu.setAttribute('aria-hidden','true');
-  scrollMenu.classList.remove('open');
-}
-if(menuClose) menuClose.addEventListener('click', closeScrollMenu);
-if(menuContinue) menuContinue.addEventListener('click', ()=>{ closeScrollMenu(); window.scrollTo({ top: document.getElementById('surprise').offsetTop, behavior: 'smooth' }); });
-const npc = document.getElementById('npc');
-const npcBubble = document.getElementById('npc-bubble');
-let npcTimeout = null;
 function showNPC(text, opts = {}){
-  if(!npc) return;
   npcBubble.textContent = text || '';
   npc.setAttribute('aria-hidden','false');
   npc.classList.add('show');
-  if(opts.promptScroll && scrollHint){
-    scrollHint.classList.add('pulse');
-    clearTimeout(npcTimeout);
-    npcTimeout = setTimeout(()=> scrollHint.classList.remove('pulse'), 8000);
-  }
   if(opts.highlightKeys && Array.isArray(opts.highlightKeys)){
     opts.highlightKeys.forEach(k => {
       const t = document.querySelector(`.letter[data-key="${k}"]`);
